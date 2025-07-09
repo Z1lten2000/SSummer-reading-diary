@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Летний читательский дневник | Luxury Edition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@300;400;600;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="golden-border"></div>
+    <div class="diamond-overlay"></div>
+    <div class="particles" id="particles-js"></div>
+    
+    <div class="container">
+        <header class="animate__animated animate__fadeInDown">
+            <div class="title-wrapper">
+                <h1>
+                    <span class="gold-text">📖 Летний</span>
+                    <span class="diamond-text">Дневник</span>
+                    <div class="sparkle"></div>
+                    <div class="sparkle sparkle-2"></div>
+                    <div class="sparkle sparkle-3"></div>
+                </h1>
+                <div class="title-decoration">
+                    <div class="gem gem-left"></div>
+                    <div class="gem gem-right"></div>
+                </div>
+            </div>
+            <p class="subtitle">Отмечай прочитанное как в luxury-отеле</p>
+        </header>
+
+        <div class="progress-container animate__animated animate__fadeIn">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill">
+                    <span class="progress-text">0%</span>
+                    <div class="liquid"></div>
+                    <div class="bubbles"></div>
+                </div>
+            </div>
+            <div class="progress-stats">
+                <span id="booksRead">0</span>/<span id="totalBooks">0</span> книг
+                <button id="resetProgress" class="reset-btn">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="tabs animate__animated animate__fadeIn">
+            <button class="tab-btn active" data-tab="obligatory">
+                <i class="icon fas fa-book"></i> Обязательные
+            </button>
+            <button class="tab-btn" data-tab="optional">
+                <i class="icon fas fa-bookmark"></i> Дополнительные
+            </button>
+            <button class="tab-btn" data-tab="shortest">
+                <i class="icon fas fa-bolt"></i> Топ-11 коротких
+            </button>
+        </div>
+
+        <div class="tab-content animate__animated animate__fadeInUp" id="obligatory">
+            <div class="content-header">
+                <h2><span class="highlight">Для обязательного</span> чтения</h2>
+                <div class="crystal-icon"></div>
+            </div>
+            <ul class="book-list" id="obligatory-list"></ul>
+        </div>
+
+        <div class="tab-content animate__animated animate__fadeInUp" id="optional" style="display:none;">
+            <div class="content-header">
+                <h2><span class="highlight">Для дополнительного</span> чтения</h2>
+                <div class="crystal-icon"></div>
+            </div>
+            <ul class="book-list" id="optional-list"></ul>
+        </div>
+
+        <div class="tab-content animate__animated animate__fadeInUp" id="shortest" style="display:none;">
+            <div class="content-header">
+                <h2><span class="highlight">Топ-11</span> самых коротких</h2>
+                <div class="crystal-icon"></div>
+            </div>
+            <p class="hint">💎 Начните с них для быстрого прогресса</p>
+            <ul class="book-list" id="shortest-list"></ul>
+        </div>
+
+        <div class="journal-section animate__animated animate__fadeIn">
+            <div class="journal-header">
+                <h2><i class="icon fas fa-feather-alt"></i> <span class="gold-text">Luxury</span> Дневник</h2>
+                <div class="golden-feather"></div>
+            </div>
+            <div class="journal-container">
+                <table id="journalTable">
+                    <thead>
+                        <tr>
+                            <th><i class="icon fas fa-user-edit"></i> Автор</th>
+                            <th><i class="icon fas fa-book"></i> Название</th>
+                            <th><i class="icon fas fa-theater-masks"></i> Жанр</th>
+                            <th><i class="icon fas fa-crown"></i> Герои</th>
+                            <th><i class="icon fas fa-scroll"></i> Сюжет</th>
+                            <th><i class="icon fas fa-lightbulb"></i> Основная мысль</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <button id="addJournalEntry" class="glow-button">
+                    <i class="icon fas fa-plus-circle"></i> Добавить запись
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-books">
+        <div class="book" style="--delay:0s"></div>
+        <div class="book" style="--delay:1s"></div>
+        <div class="book" style="--delay:2s"></div>
+    </div>
+    
+    <div class="floating-diamonds">
+        <div class="diamond" style="--delay:0s"></div>
+        <div class="diamond" style="--delay:1s"></div>
+        <div class="diamond" style="--delay:2s"></div>
+    </div>
+
+    <audio id="checkSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
